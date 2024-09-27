@@ -130,12 +130,14 @@ public class PlayerController: MonoBehaviour
                 print("rolling, rollcount: " + rollCount);
                 rigidBody.AddForce(transform.forward * rollForce, ForceMode.Impulse);
                 StartCoroutine(RollCooldown(0.2f));
+                StartCoroutine(DecreaseRollCount(1.0f));
             }
             else
             {
                 print("rolling, rollcount: " + rollCount);
                 rigidBody.AddForce(-transform.forward * rollForce, ForceMode.Impulse);
                 StartCoroutine(RollCooldown(0.2f));
+                StartCoroutine(DecreaseRollCount(1.0f));
             }
         }
         else if(rollCount >=2 && !isRolling)
@@ -150,5 +152,13 @@ public class PlayerController: MonoBehaviour
         isRolling = true;
         yield return new WaitForSeconds(time);
         isRolling = false;        
+    }
+    private System.Collections.IEnumerator DecreaseRollCount(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if(rollCount > 0)
+        {
+            rollCount--;   
+        } 
     }
 }
