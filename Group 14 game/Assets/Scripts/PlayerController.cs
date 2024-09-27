@@ -26,6 +26,12 @@ public class PlayerController: MonoBehaviour
 
     private int rollCount =0;
 
+    public GameObject stepRayUpper;
+    public GameObject stepRayLower;
+    public float stepHeight = 0.3f;
+    public float stepSmooth = 0.2f;
+
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -35,6 +41,7 @@ public class PlayerController: MonoBehaviour
         //setting the friction of the player to 0 so they dont stick to walls when jumping on them
         PhysicMaterial material = collider.material;
         material.dynamicFriction = 0;
+        stepRayUpper.transform.position = new Vector3(stepRayUpper.transform.position.x, stepHeight, stepRayUpper.transform.position.z);
     }
     // Update is called once per frame
     void Update()
@@ -50,6 +57,7 @@ public class PlayerController: MonoBehaviour
         //jumping
         handleJump();
         roll();
+        stepClimb();
         //adds extra gravity to player when jumping
     }
 
@@ -162,5 +170,18 @@ public class PlayerController: MonoBehaviour
         } 
     }
 
+    private void stepClimb()
+    {
+        RaycastHit hitLower;
+        if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.25f))
+        {
+            RaycastHit hitUpper;
+            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.33f))
+            {
+                Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y + stepHeight, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, stepSmooth);
+            }
+        }
+    }
 
 }
