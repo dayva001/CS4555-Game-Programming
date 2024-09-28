@@ -176,7 +176,7 @@ public class PlayerController: MonoBehaviour
         if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.25f))
         {
             RaycastHit hitUpper;
-            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.33f))
+            if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.4f))
             {
                 Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y + stepHeight, transform.position.z);
                 transform.position = Vector3.Lerp(transform.position, targetPosition, stepSmooth);
