@@ -36,7 +36,7 @@ public class Fighter : MonoBehaviour
         }
         if(Time.time > nextFireTime)
         {
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetKeyDown(KeyCode.C))
             {
                 OnClick();
             }
