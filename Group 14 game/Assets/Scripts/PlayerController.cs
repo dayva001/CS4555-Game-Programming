@@ -80,12 +80,19 @@ public class PlayerController: MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-                rigidBody.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+            rigidBody.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+            animator.SetBool("IsJumping", true);
+            StartCoroutine(SwapJumpBool(0.6f));
+
         }
         if(!onGround)
         {
             rigidBody.AddForce(transform.up * -extraGravity);
             rigidBody.drag = 0;
+        }
+        if(animator.GetBool("IsJumping") && onGround)
+        {
+            StartCoroutine(SwapJumpBool(0.01f));
         }
         else
         {
@@ -170,6 +177,17 @@ public class PlayerController: MonoBehaviour
         } 
     }
 
+    private System.Collections.IEnumerator SwapJumpBool(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (onGround)
+        {
+            animator.SetBool("IsJumping", false);
+        }
+
+    }
+
+    
     private void stepClimb()
     {
         RaycastHit hitLower;
