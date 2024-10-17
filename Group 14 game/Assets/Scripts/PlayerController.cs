@@ -81,6 +81,7 @@ public class PlayerController: MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
                 rigidBody.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+                animator.SetTrigger("Jumping");
         }
         if(!onGround)
         {
@@ -89,8 +90,10 @@ public class PlayerController: MonoBehaviour
         }
         else
         {
+            animator.SetTrigger("Landed");
             rigidBody.drag = dragSave;
         }
+        
     }
 
     private void setAnimations()
@@ -154,7 +157,6 @@ public class PlayerController: MonoBehaviour
             rollCount=0;
         }
     }
-
     private System.Collections.IEnumerator RollCooldown(float time)
     {
         isRolling = true;
