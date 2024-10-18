@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    bool playerInRange = false;
+    Collider player = null;
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerInRange)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
+            }
+        }
     }
 
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        print("pickup");
-        if(other.gameObject.tag == "Player")
-        {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                print("grabbed");
-                other.gameObject.GetComponent<Animator>().SetTrigger("Grab");
-            }
-        }
+        player = other;
+        playerInRange = true;   
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        player = null;
+        playerInRange = false;
     }
 }
