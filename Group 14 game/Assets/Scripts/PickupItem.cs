@@ -24,7 +24,7 @@ public class PickupItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !equipped)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
