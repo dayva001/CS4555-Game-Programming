@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
             currentTime += 1f;
         }
 
-        // Once the cooldown time is up, slider value should be max, item square should be green, and player shoul be bale to heal.
+        // Once the cooldown time is up, slider value should be max, item square should be green, and player should be able to heal.
         healthPotionSquare.slider.value = healthPotionSquare.slider.maxValue;
         healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(1f);
         canHeal = true;
