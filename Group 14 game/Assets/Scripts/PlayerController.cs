@@ -11,6 +11,7 @@ public class PlayerController: MonoBehaviour
     public float downForce = 10f;
     public bool canAirstrafe = true;
     private bool isRolling = false;
+    private bool upForce = false;
     public float jumpforce = 20f;
     public float rollForce = 10f;
     private Vector3 movementDirection;
@@ -23,7 +24,7 @@ public class PlayerController: MonoBehaviour
     private float turnSmoothVelocity;
     private Animator animator;
     private float dragSave;
-
+    private float jumpTime=Mathf.Infinity;
     private int rollCount =0;
 
     public GameObject stepRayUpper;
@@ -44,7 +45,7 @@ public class PlayerController: MonoBehaviour
         stepRayUpper.transform.position = new Vector3(stepRayUpper.transform.position.x, stepHeight, stepRayUpper.transform.position.z);
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //checks if the player is on the ground
         onGround = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
@@ -55,10 +56,22 @@ public class PlayerController: MonoBehaviour
         //calculates the counter movement force
         counterMovement = new Vector3(-rigidBody.velocity.x * counterMovementForce, 0, -rigidBody.velocity.z * counterMovementForce);
         //jumping
-        handleJump();
-        roll();
-        stepClimb();
+        Roll();
+        StepClimb();
         //adds extra gravity to player when jumping
+        if(Input.GetKeyDown(KeyCode.Space) && onGround)
+        {
+            upForce = true;
+        }
+        if(jumpTime + 0.2f < Time.time)
+        {
+            if(onGround)
+            {
+                animator.SetTrigger("Landed");
+                jumpTime = Mathf.Infinity;
+            }
+
+        }
     }
 
     private void FixedUpdate()
@@ -68,35 +81,33 @@ public class PlayerController: MonoBehaviour
             return;
         }
         //moving
-        move();
-        downardForceCheck();
+        Move();
+        DownardForceCheck();
         //setting rotaiton
-        setRotation();
+        SetRotation();
         //setting animations
-        setAnimations();
+        SetAnimations();
+        if(upForce)
+        {
+            HandleJump();
+            upForce = false;
+        }
     }
 
-    private void handleJump()
+    private void HandleJump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-                rigidBody.AddForce(transform.up * jumpforce, ForceMode.Impulse);
-                animator.SetTrigger("Jumping");
-        }
+        rigidBody.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+        animator.SetTrigger("Jumping");
         if(!onGround)
         {
             rigidBody.AddForce(transform.up * -extraGravity);
             rigidBody.drag = 0;
         }
-        else
-        {
-            animator.SetTrigger("Landed");
-            rigidBody.drag = dragSave;
-        }
-        
+        rigidBody.drag = dragSave;
+        jumpTime = Time.time;
     }
 
-    private void setAnimations()
+    private void SetAnimations()
     {
         if(movementDirection == Vector3.zero || rigidBody.velocity.magnitude < 0.1f)
         {
@@ -108,7 +119,7 @@ public class PlayerController: MonoBehaviour
         }
     }
 
-    private void setRotation()
+    private void SetRotation()
     {
         if(lookDirection.magnitude >= 0.1f)
         {
@@ -118,12 +129,12 @@ public class PlayerController: MonoBehaviour
         }
     }
 
-    private void move()
+    private void Move()
     {
         rigidBody.AddForce(movementDirection.normalized * movementForce + counterMovement);
     }
 
-    private void downardForceCheck()
+    private void DownardForceCheck()
     {
         if (rigidBody.velocity.y < 0)
         {
@@ -131,7 +142,7 @@ public class PlayerController: MonoBehaviour
         }
     }
 
-    private void roll()
+    private void Roll()
     {
         if(Input.GetKeyDown(KeyCode.LeftShift) && onGround && !isRolling && rollCount < 2)
         {
@@ -172,7 +183,7 @@ public class PlayerController: MonoBehaviour
         } 
     }
 
-    private void stepClimb()
+    private void StepClimb()
     {
         RaycastHit hitLower;
         if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.25f))
