@@ -1250,7 +1250,7 @@ MonoBehaviour:
   canPatrol: 1
   canChase: 1
   sightRange: 10
-  attackRange: 1
+  attackRange: 0.8
 --- !u!1 &5025664551095402012
 GameObject:
   m_ObjectHideFlags: 0
