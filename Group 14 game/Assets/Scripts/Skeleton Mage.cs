@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
-public class SkeletonArcher : MonoBehaviour
+public class SkeletonMage : MonoBehaviour
 {
     public NavMeshAgent agent;
     public List<Transform> player;
@@ -17,7 +17,7 @@ public class SkeletonArcher : MonoBehaviour
     private Animator animator;
     public GameObject firingLocation;
     //Attacking
-    public float timeBetweenAttacks;
+    public float timeBetweenAttacks = 1.5f;
     bool alreadyAttacked;
     public GameObject projectile;
     private Rigidbody rigidBody;
@@ -111,14 +111,13 @@ public class SkeletonArcher : MonoBehaviour
             animator.SetTrigger("Attacking");
             StartCoroutine(InstantiateProjectileAfterAnimation());
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Invoke(nameof(ResetAttack), animator.runtimeAnimatorController.animationClips[2].length);
         }
     }
-
     private IEnumerator InstantiateProjectileAfterAnimation()
     {
         agent.isStopped = true;
-            yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips[1].length);
+            yield return new WaitForSeconds(timeBetweenAttacks);
             Quaternion arrowAngle = Quaternion.LookRotation((NearestPlayer().transform.position + new Vector3(0f, 0.5f, 0f)) - firingLocation.GetComponent<Transform>().position);
             GameObject arrow = Instantiate(projectile, firingLocation.GetComponent<Transform>().position, arrowAngle);
     }

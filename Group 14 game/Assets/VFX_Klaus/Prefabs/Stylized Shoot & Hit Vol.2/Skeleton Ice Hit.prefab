@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 944750204202798430}
   - component: {fileID: 944750204202798429}
   m_Layer: 0
-  m_Name: FX_Shoot_Ice_hit
+  m_Name: Skeleton Ice Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

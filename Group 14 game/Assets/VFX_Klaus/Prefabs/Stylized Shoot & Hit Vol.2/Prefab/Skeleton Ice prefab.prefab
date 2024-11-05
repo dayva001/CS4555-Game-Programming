@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5143980916437850802}
   - component: {fileID: 210337647087535054}
   m_Layer: 0
-  m_Name: FX_Shoot_Ice
+  m_Name: Skeleton Ice prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6348693847339324561}
@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   fireRate: 1
-  muzzlePrefab: {fileID: 4061450664323217206, guid: a929e9def95f4c943b16bc27d1598959, type: 3}
-  hitPrefab: {fileID: 944750204202798419, guid: d5841a72fc3bb1448847966f04bb905a, type: 3}
+  muzzlePrefab: {fileID: 4061450664323217206, guid: 2da8393acfad53542945c8222a15c10a, type: 3}
+  hitPrefab: {fileID: 944750204202798419, guid: b28758101b07f5843bf75912fccca3f9, type: 3}
 --- !u!65 &5143980916437850802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,6 +114,18 @@ PrefabInstance:
     - target: {fileID: 4840880294674937312, guid: 07aa199fd16558349ad098143e8014c2, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840880294674937312, guid: 07aa199fd16558349ad098143e8014c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840880294674937312, guid: 07aa199fd16558349ad098143e8014c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840880294674937312, guid: 07aa199fd16558349ad098143e8014c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4840880294674937312, guid: 07aa199fd16558349ad098143e8014c2, type: 3}
       propertyPath: m_LocalPosition.x
