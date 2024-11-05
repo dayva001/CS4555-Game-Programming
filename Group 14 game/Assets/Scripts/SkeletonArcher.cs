@@ -20,17 +20,20 @@ public class SkeletonArcher : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject projectile;
+    private Rigidbody rigidBody;
+    public bool canPatrol = true;
+    public bool canChase = true;
 
     //States
     public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    private bool playerInSightRange, playerInAttackRange;
     void Start()
     {
         animator = GetComponent<Animator>();
     }
     void Awake()
     {
-
+        rigidBody = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectsWithTag("Player").Select(go => go.transform).ToList();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -41,27 +44,43 @@ public class SkeletonArcher : MonoBehaviour
         //check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (!playerInSightRange && !playerInAttackRange && canPatrol) Patroling();
+        if (playerInSightRange && !playerInAttackRange && canChase) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        SetAnimations();
+    }
+
+    private void SetAnimations()
+    {
+
+        if (agent.remainingDistance < 0.1f || rigidBody.velocity == Vector3.zero)
+        {
+            animator.SetFloat("Speed", 0);
+            print("Speed 0");
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1);
+            print("Speed 1");
+        }
     }
 
     void Patroling()
     {
-        if (!walkPointSet) SearchWalkPoint();
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
+            if (!walkPointSet) SearchWalkPoint();
+            if (walkPointSet)
+                agent.SetDestination(walkPoint);
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+            Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        //walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-
+            //walkpoint reached
+            if (distanceToWalkPoint.magnitude < 1f)
+                walkPointSet = false;
     }
 
     private void SearchWalkPoint()
     {
+
         //calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -100,8 +119,8 @@ public class SkeletonArcher : MonoBehaviour
     {
         agent.isStopped = true;
         yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips[1].length);
-        Quaternion arrowAngle = Quaternion.LookRotation((NearestPlayer().transform.position + new Vector3(0f,0.5f,0f)) - firingLocation.GetComponent<Renderer>().bounds.center);
-        GameObject arrow = Instantiate(projectile, firingLocation.GetComponent<Renderer>().bounds.center, arrowAngle);
+        Quaternion arrowAngle = Quaternion.LookRotation((NearestPlayer().transform.position + new Vector3(0f,0.5f,0f)) - firingLocation.GetComponent<Transform>().position);
+        GameObject arrow = Instantiate(projectile, firingLocation.GetComponent<Transform>().position, arrowAngle);
     }
     private Transform NearestPlayer()
     {

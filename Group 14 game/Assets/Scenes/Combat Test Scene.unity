@@ -4339,13 +4339,13 @@ MonoBehaviour:
   walkDirection: {x: 0, y: 0, z: 0}
   walkPointRange: 3
   walkPointSet: 0
-  firingLocation: {fileID: 820762762}
+  firingLocation: {fileID: 2046718042}
   timeBetweenAttacks: 1.5
   projectile: {fileID: 1485196952128162089, guid: be4fdf4dee92e4342bd97539aba88e99, type: 3}
+  canPatrol: 1
+  canChase: 1
   sightRange: 10
   attackRange: 5
-  playerInSightRange: 0
-  playerInAttackRange: 0
 --- !u!1001 &677748092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4529,9 +4529,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8a65e1f3934aa144914742517bf04aa, type: 3}
   m_PrefabInstance: {fileID: 1720213051}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &820762762 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7694955429606808406, guid: a59a2c67648cbd34a95238a6b1cea670, type: 3}
+--- !u!4 &820762766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4017984197819299373, guid: a59a2c67648cbd34a95238a6b1cea670, type: 3}
   m_PrefabInstance: {fileID: 5791611352910606090}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &821086084
@@ -6296,6 +6296,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000659168}
   m_CullTransparentMesh: 1
+--- !u!1 &2046718042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046718043}
+  m_Layer: 0
+  m_Name: Shootpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046718043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046718042}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.467, y: 0.727, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820762766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2083199783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6894,9 +6925,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 850384480067352479, guid: a59a2c67648cbd34a95238a6b1cea670, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4017984197819299373, guid: a59a2c67648cbd34a95238a6b1cea670, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2046718043}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7590262822122855182, guid: a59a2c67648cbd34a95238a6b1cea670, type: 3}
       insertIndex: -1
