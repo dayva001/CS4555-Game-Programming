@@ -108,14 +108,9 @@ public class SkeletonMelee : MonoBehaviour
             //attack code here
             animator.SetTrigger("Attacking");
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            agent.isStopped = true;
+            Invoke(nameof(ResetAttack), animator.runtimeAnimatorController.animationClips[1].length);
         }
-    }
-
-    private IEnumerator InstantiateProjectileAfterAnimation()
-    {
-        agent.isStopped = true;
-        yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips[1].length);
     }
     private Transform NearestPlayer()
     {
