@@ -17,4 +17,25 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
+
+    // Enemies take damage depending on what player weapon hits them.
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "PlayerMageProjectile")
+        {
+            TakeDamage(20);
+        }
+        if (collision.gameObject.tag == "PlayerArcherProjectile")
+        {
+            TakeDamage(10);
+        }
+        if (collision.gameObject.tag == "PlayerMeleeWeapon")
+        {
+            TakeDamage(30);
+        }
+    }
 }

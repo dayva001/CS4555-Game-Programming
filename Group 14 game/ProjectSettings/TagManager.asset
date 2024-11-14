@@ -11,6 +11,9 @@ TagManager:
   - EnemyMageProjectile
   - EnemyArcherProjectile
   - EnemyMeleeWeapon
+  - PlayerMageProjectile
+  - PlayerArcherProjectile
+  - PlayerMeleeWeapon
   layers:
   - Default
   - TransparentFX
