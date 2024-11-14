@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 210337647087535054}
   m_Layer: 0
   m_Name: Skeleton Ice prefab
-  m_TagString: Untagged
+  m_TagString: EnemyMageProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,6 +7,10 @@ TagManager:
   - Pickup
   - CinemachineTarget
   - Unwalkable
+  - Enemy
+  - EnemyMageProjectile
+  - EnemyArcherProjectile
+  - EnemyMeleeWeapon
   layers:
   - Default
   - TransparentFX

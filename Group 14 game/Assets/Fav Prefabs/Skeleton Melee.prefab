@@ -1100,9 +1100,10 @@ GameObject:
   - component: {fileID: 7152348670645633464}
   - component: {fileID: 5749215597235531476}
   - component: {fileID: 8075704381049334307}
+  - component: {fileID: 5516133600861512150}
   m_Layer: 0
   m_Name: Skeleton Melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,6 +1252,29 @@ MonoBehaviour:
   canChase: 1
   sightRange: 10
   attackRange: 0.8
+--- !u!136 &5516133600861512150
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341212649948842884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.21253408
+  m_Height: 1.8297024
+  m_Direction: 1
+  m_Center: {x: -0.0003191233, y: 0.8626404, z: 3.445677e-13}
 --- !u!1 &5025664551095402012
 GameObject:
   m_ObjectHideFlags: 0

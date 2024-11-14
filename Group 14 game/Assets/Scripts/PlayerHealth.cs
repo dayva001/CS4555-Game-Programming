@@ -67,4 +67,20 @@ public class PlayerHealth : MonoBehaviour
         healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(1f);
         canHeal = true;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyMageProjectile")
+        {
+            TakeDamage(20);
+        }
+        if (collision.gameObject.tag == "EnemyArcherProjectile")
+        {
+            TakeDamage(10);
+        }
+        if (collision.gameObject.tag == "EnemyMeleeWeapon")
+        {
+            TakeDamage(30);
+        }
+    }
 }

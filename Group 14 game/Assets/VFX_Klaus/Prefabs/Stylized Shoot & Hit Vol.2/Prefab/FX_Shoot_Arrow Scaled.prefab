@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 139706808539582968}
   m_Layer: 0
   m_Name: FX_Shoot_Arrow Scaled
-  m_TagString: Untagged
+  m_TagString: EnemyArcherProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
