@@ -784,6 +784,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &404758702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404758687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d498a049b7a12ee439ffcabd92cded2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 30
 --- !u!1 &532913418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +5419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5165290527024749648, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+    - {fileID: 3944409150663261454, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4162353006516137414, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
@@ -5449,7 +5463,9 @@ MonoBehaviour:
   healthPotionSquare: {fileID: 1981768558}
   canHeal: 1
   rageScrollSquare: {fileID: 980690193}
-  rage: 1
+  canRage: 1
+  isRaged: 0
+  isDown: 0
 --- !u!1 &1335905058
 GameObject:
   m_ObjectHideFlags: 0
@@ -6218,7 +6234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6510184044957451122, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6510184044957451122, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
       propertyPath: m_IsTrigger
@@ -6247,6 +6263,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6537830519325229606, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 404758697}
+    - targetCorrespondingSourceObject: {fileID: 6537830519325229606, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404758702}
   m_SourcePrefab: {fileID: 100100000, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
 --- !u!195 &1961095273 stripped
 NavMeshAgent:
