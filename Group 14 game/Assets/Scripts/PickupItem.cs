@@ -12,8 +12,9 @@ public class PickupItem : MonoBehaviour
     private float timeOffset;
     public GameObject pickupUI;
     public GameObject equipment;
-    public AnimatorOverrideController newAnimations;
+    public RuntimeAnimatorController newAnimations;
     private bool equipped = false;
+    public string scriptName;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class PickupItem : MonoBehaviour
         transform.localScale = Vector3.one;
         //Instantiate(equipment, parent.transform);
         player.gameObject.GetComponent<Animator>().runtimeAnimatorController = newAnimations;
+        player.gameObject.AddComponent(System.Type.GetType(scriptName));
         //Destroy(this.gameObject.transform.parent.gameObject);
     }
     

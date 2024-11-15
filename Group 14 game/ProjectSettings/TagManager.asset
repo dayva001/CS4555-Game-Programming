@@ -4,16 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pickup
   - CinemachineTarget
   - Unwalkable
   - Enemy
-  - EnemyMageProjectile
-  - EnemyArcherProjectile
-  - EnemyMeleeWeapon
-  - PlayerMageProjectile
-  - PlayerArcherProjectile
-  - PlayerMeleeWeapon
+  - Melee Pickup
+  - Pickup
   layers:
   - Default
   - TransparentFX
