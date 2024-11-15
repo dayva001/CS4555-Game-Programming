@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class DamageManager : MonoBehaviour
 {
-        public int damageAmount = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int damageAmount;
 
     private void OnCollisionEnter(Collision collision)
     {

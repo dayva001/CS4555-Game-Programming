@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController: MonoBehaviour
@@ -32,6 +33,13 @@ public class PlayerController: MonoBehaviour
     public float stepHeight = 0.3f;
     public float stepSmooth = 0.2f;
 
+    // In Update() the script checks if the player is down from the PlayerHealth script.
+    public bool isDown;
+    // Tells if player has downed movement. Used in the Move() function.
+    public bool hasDownedMovement = false;
+    // Fraction of movement speed while downed.
+    public float downedMovementFraction = 0.3f;
+
 
     private void Start()
     {
@@ -47,6 +55,8 @@ public class PlayerController: MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // Checks if player is down from PlayerHealth script.
+        isDown = gameObject.GetComponent<PlayerHealth>().CheckIfDown();
         //checks if the player is on the ground
         onGround = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
         //sets movement so that it can be updated in fixed update
@@ -59,7 +69,7 @@ public class PlayerController: MonoBehaviour
         Roll();
         StepClimb();
         //adds extra gravity to player when jumping
-        if(Input.GetKeyDown(KeyCode.Space) && onGround)
+        if(Input.GetKeyDown(KeyCode.Space) && onGround && !isDown)
         {
             upForce = true;
         }
@@ -131,6 +141,19 @@ public class PlayerController: MonoBehaviour
 
     private void Move()
     {
+        // The logic of these two if blocks is analogous to RDT 3.0 protocol. Handles the cycle of players going down and being revived.
+        if (isDown && !hasDownedMovement)
+        {
+            // When player goes down, apply downed movement force.
+            movementForce = movementForce * downedMovementFraction;
+            hasDownedMovement = true;
+        }
+        if (!isDown && hasDownedMovement)
+        {
+            // When player is revived, they are no longer down but movementForce and hasDownedMovement won't be corrected until this if block.
+            movementForce = movementForce * (1 / downedMovementFraction);
+            hasDownedMovement = false;
+        }
         rigidBody.AddForce(movementDirection.normalized * movementForce + counterMovement);
     }
 
@@ -144,7 +167,7 @@ public class PlayerController: MonoBehaviour
 
     private void Roll()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && onGround && !isRolling && rollCount < 2)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && onGround && !isRolling && rollCount < 2 && !isDown)
         {
             rollCount++;
             if(rigidBody.velocity.magnitude > 0.1f)
