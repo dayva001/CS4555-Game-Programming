@@ -12,7 +12,7 @@ public class PickupItem : MonoBehaviour
     private float timeOffset;
     public GameObject pickupUI;
     public GameObject equipment;
-    public AnimatorOverrideController newAnimations;
+    public RuntimeAnimatorController newAnimations;
     private bool equipped = false;
     public string scriptName;
 
@@ -44,8 +44,6 @@ public class PickupItem : MonoBehaviour
         equipped = true;
         pickupUI.SetActive(false);
         player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
-        player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
-
         GameObject parent = GameObject.Find("WeaponHolder");
         transform.SetParent(parent.transform);
         transform.localPosition = Vector3.zero;
