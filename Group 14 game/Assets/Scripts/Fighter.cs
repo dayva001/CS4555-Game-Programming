@@ -5,11 +5,6 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     private Animator anim;
-    public float cooldownTime = 2f;
-    private float nextFireTime = 0f;
-    public static int noOfClicks = 0;
-    float lastClickedTime = 0;
-    float maxComboDelay = 1; 
 
     // Start is called before the first frame update
     void Start()
@@ -20,43 +15,35 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 1"))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            anim.SetBool("Hit 1", false);
-        }
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 2"))
-        {
-            anim.SetBool("Hit 2", false);
-            noOfClicks = 0;
-        }
-
-        if(Time.time - lastClickedTime > maxComboDelay)
-        {
-            noOfClicks = 0;
-        }
-        if(Time.time > nextFireTime)
-        {
-            if(Input.GetKeyDown(KeyCode.C))
-            {
-                OnClick();
-            }
+            OnClick();
         }
     }
     
     void OnClick()
     {
-        lastClickedTime = Time.time;
-        noOfClicks++;
-        if(noOfClicks == 1)
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
         {
-            anim.SetBool("Hit 1", true);
+            anim.SetBool("Hit 1",true);
+            StartCoroutine(ResetHit(anim.GetCurrentAnimatorStateInfo(0).length,"Hit 1"));
+            
         }
-        noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 1"))
+        {
+            anim.SetBool("Hit 2",true);
+            StartCoroutine(ResetHit(anim.GetCurrentAnimatorStateInfo(0).length,"Hit 2"));
+        }
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 2"))
+        {
+            anim.SetBool("Hit 3", true);
+            StartCoroutine(ResetHit(anim.GetCurrentAnimatorStateInfo(0).length,"Hit 3"));
+        }
+    }
 
-        if(noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 1"))
-        {
-            anim.SetBool("Hit 1", false);
-            anim.SetBool("Hit 2", true); 
-        }
+    private IEnumerator ResetHit(float time, string hit)
+    {
+        yield return new WaitForSeconds(time);
+        anim.SetBool(hit, false);
     }
 }

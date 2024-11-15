@@ -13,10 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthPotionSquare healthPotionSquare;
     public bool canHeal = true;
     public RageScrollSquare rageScrollSquare;
-    public bool canRage = true;
-    public int takeEnemyMageDmg = 20;
-    public int takeEnemyArcherDmg = 10;
-    public int takeEnemyMeleeDmg = 30;
+    public bool rage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +29,18 @@ public class PlayerHealth : MonoBehaviour
         {
             Heal();
         }
-        if (Input.GetKeyDown(KeyCode.B) && canRage)
+        if (Input.GetKeyDown(KeyCode.B) && rage)
         {
-            Rage();
+            rage = true;
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
+        if(rage)
+        {
+            damage = damage / 2;
+        }
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
@@ -76,16 +77,6 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Rage reduces the damage the player takes and increases the damage they inflict.
-    void Rage()
-    {
-        takeEnemyMageDmg /= 2;
-        takeEnemyArcherDmg /= 2;
-        takeEnemyMeleeDmg /= 2;
-        canRage = false;
-        rageScrollSquare.slider.value = 0;
-        rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(0f);
-        StartCoroutine(StartRageCooldownTimer()); 
-    }
 
     // Cooldown for rage.
     private IEnumerator StartRageCooldownTimer()
@@ -104,26 +95,6 @@ public class PlayerHealth : MonoBehaviour
         // Once the cooldown time is up, slider value should be max, item square should be green, and player should be able to heal.
         rageScrollSquare.slider.value = rageScrollSquare.slider.maxValue;
         rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(1f);
-        takeEnemyMageDmg *= 2;
-        takeEnemyArcherDmg *= 2;
-        takeEnemyMeleeDmg *= 2;
-        canRage = true;
-    }
-
-    // Players take damage depending on what enemy weapon hits them.
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "EnemyMageProjectile")
-        {
-            TakeDamage(takeEnemyMageDmg);
-        }
-        if (collision.gameObject.tag == "EnemyArcherProjectile")
-        {
-            TakeDamage(takeEnemyArcherDmg);
-        }
-        if (collision.gameObject.tag == "EnemyMeleeWeapon")
-        {
-            TakeDamage(takeEnemyMeleeDmg);
-        }
+        rage = true;
     }
 }

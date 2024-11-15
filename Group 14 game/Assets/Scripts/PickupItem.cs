@@ -14,6 +14,7 @@ public class PickupItem : MonoBehaviour
     public GameObject equipment;
     public AnimatorOverrideController newAnimations;
     private bool equipped = false;
+    public string scriptName;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,8 @@ public class PickupItem : MonoBehaviour
         equipped = true;
         pickupUI.SetActive(false);
         player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
+        player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
+
         GameObject parent = GameObject.Find("WeaponHolder");
         transform.SetParent(parent.transform);
         transform.localPosition = Vector3.zero;
@@ -50,6 +53,7 @@ public class PickupItem : MonoBehaviour
         transform.localScale = Vector3.one;
         //Instantiate(equipment, parent.transform);
         player.gameObject.GetComponent<Animator>().runtimeAnimatorController = newAnimations;
+        player.gameObject.AddComponent(System.Type.GetType(scriptName));
         //Destroy(this.gameObject.transform.parent.gameObject);
     }
     
