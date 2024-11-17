@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickupItem : MonoBehaviour
 {
@@ -14,20 +15,30 @@ public class PickupItem : MonoBehaviour
     public GameObject equipment;
     public RuntimeAnimatorController newAnimations;
     private bool equipped = false;
-    public string scriptName;
+    //public string scriptName;
+
+    private Controls actions;
+    private InputAction interact;
+
+    void Awake()
+    {
+        actions = new Controls();
+        interact = actions.PlayerControls.Interact;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         timeOffset = Random.Range(-1f, 1f);
         pickupUI.SetActive(false);
+        interact = actions.PlayerControls.Interact;
     }
     // Update is called once per frame
     void Update()
     {
         if (playerInRange && !equipped)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (interact.triggered)
             {
                 EquipItem();
             }
@@ -51,7 +62,7 @@ public class PickupItem : MonoBehaviour
         transform.localScale = Vector3.one;
         //Instantiate(equipment, parent.transform);
         player.gameObject.GetComponent<Animator>().runtimeAnimatorController = newAnimations;
-        player.gameObject.AddComponent(System.Type.GetType(scriptName));
+        //player.gameObject.AddComponent(System.Type.GetType(scriptName));
         //Destroy(this.gameObject.transform.parent.gameObject);
     }
     
@@ -84,7 +95,14 @@ public class PickupItem : MonoBehaviour
             transform.position = new Vector3(pos.x, newY, pos.z);
         }
     }
-
+    void OnEnable()
+    {
+        actions.PlayerControls.Enable();
+    }
+    void OnDisable()
+    {
+        actions.PlayerControls.Disable();
+    }
 }
 
  

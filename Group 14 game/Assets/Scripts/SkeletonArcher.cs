@@ -56,12 +56,10 @@ public class SkeletonArcher : MonoBehaviour
         if (agent.remainingDistance < 0.1f || rigidBody.velocity == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);
-            print("Speed 0");
         }
         else
         {
             animator.SetFloat("Speed", 1);
-            print("Speed 1");
         }
     }
 
