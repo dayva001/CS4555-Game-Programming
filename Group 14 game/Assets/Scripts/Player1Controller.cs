@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController: MonoBehaviour
+public class Player1Controller: MonoBehaviour
 {
     public float movementForce = 10f;
     public float counterMovementForce = 0.1f;   
@@ -41,17 +41,7 @@ public class PlayerController: MonoBehaviour
     // Fraction of movement speed while downed.
     public float downedMovementFraction = 0.3f;
 
-    private Controls actions;
-    private InputAction jump;
-    private InputAction dash;
-    private Vector3 moveVector;
 
-    private void Awake()
-    {
-        actions = new Controls();
-        jump = actions.PlayerControls.Jump;
-        dash = actions.PlayerControls.Dash;
-    }
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -70,22 +60,11 @@ public class PlayerController: MonoBehaviour
         isDown = gameObject.GetComponent<PlayerHealth>().CheckIfDown();
         //checks if the player is on the ground
         onGround = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
-        //sets movement so that it can be updated in fixed update
-        float xMovement = actions.PlayerControls.Movement.ReadValue<Vector2>().x;
-        float zMovement = actions.PlayerControls.Movement.ReadValue<Vector2>().y;
-        movementDirection = new Vector3(xMovement, 0, zMovement);
-        //setting the look direction
-        lookDirection = new Vector3(xMovement, 0, zMovement).normalized;
         //calculates the counter movement force
         counterMovement = new Vector3(-rigidBody.velocity.x * counterMovementForce, 0, -rigidBody.velocity.z * counterMovementForce);
         //jumping
-        Roll();
         StepClimb();
         //adds extra gravity to player when jumping
-        if(jump.triggered && onGround && !isDown)
-        {
-            upForce = true;
-        }
         if(jumpTime + 0.2f < Time.time)
         {
             if(onGround)
@@ -95,6 +74,24 @@ public class PlayerController: MonoBehaviour
             }
 
         }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(onGround && !isDown)
+        {
+            upForce = true;
+        }
+    }
+
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        //sets movement so that it can be updated in fixed update
+        float xMovement = context.ReadValue<Vector2>().x;
+        float zMovement = context.ReadValue<Vector2>().y;
+        movementDirection = new Vector3(xMovement, 0, zMovement);
+        //setting the look direction
+        lookDirection = new Vector3(xMovement, 0, zMovement).normalized;
     }
     
     private void FixedUpdate()
@@ -178,9 +175,9 @@ public class PlayerController: MonoBehaviour
         }
     }
 
-    private void Roll()
+    public void OnDash(InputAction.CallbackContext context)
     {
-        if(dash.triggered && onGround && !isRolling && rollCount < 2 && !isDown)
+        if( onGround && !isRolling && rollCount < 2 && !isDown)
         {
             rollCount++;
             if(rigidBody.velocity.magnitude > 0.1f)
@@ -231,14 +228,5 @@ public class PlayerController: MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, targetPosition, stepSmooth);
             }
         }
-    }
-
-    void OnEnable()
-    {
-        actions.PlayerControls.Enable();
-    }
-    void OnDisable()
-    {
-        actions.PlayerControls.Disable();
     }
 }

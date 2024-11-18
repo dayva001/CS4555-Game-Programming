@@ -6,29 +6,26 @@ using UnityEngine.InputSystem;
 public class Fighter : MonoBehaviour
 {
     private Animator anim;
-    private Controls actions;
-    private InputAction attack;
     
-
-    void Awake()
-    {
-        actions = new Controls();
-        attack = actions.PlayerControls.Attack;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        for(int i=0; i<anim.runtimeAnimatorController.animationClips.Length; i++)
+        {
+            Debug.Log(anim.runtimeAnimatorController.animationClips[i].name + " " + anim.runtimeAnimatorController.animationClips[i].length);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(attack.triggered)
-        {
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
             OnClick();
-        }
     }
 
     float getAnimationLength(int index)
@@ -60,13 +57,5 @@ public class Fighter : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetBool(hit, false);
-    }
-    void OnEnable()
-    {
-        actions.PlayerControls.Enable();
-    }
-    void OnDisable()
-    {
-        actions.PlayerControls.Disable();
     }
 }

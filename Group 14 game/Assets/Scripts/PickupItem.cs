@@ -23,7 +23,7 @@ public class PickupItem : MonoBehaviour
     void Awake()
     {
         actions = new Controls();
-        interact = actions.PlayerControls.Interact;
+        interact = actions.Player1Controls.Interact;
     }
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class PickupItem : MonoBehaviour
     {
         timeOffset = Random.Range(-1f, 1f);
         pickupUI.SetActive(false);
-        interact = actions.PlayerControls.Interact;
+        interact = actions.Player1Controls.Interact;
     }
     // Update is called once per frame
     void Update()
@@ -97,11 +97,11 @@ public class PickupItem : MonoBehaviour
     }
     void OnEnable()
     {
-        actions.PlayerControls.Enable();
+        actions.Player1Controls.Enable();
     }
     void OnDisable()
     {
-        actions.PlayerControls.Disable();
+        actions.Player1Controls.Disable();
     }
 }
 
