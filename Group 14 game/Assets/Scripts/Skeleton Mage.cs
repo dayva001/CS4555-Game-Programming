@@ -129,6 +129,7 @@ public class SkeletonMage : MonoBehaviour
         }
         return nearestPlayer;
     }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;

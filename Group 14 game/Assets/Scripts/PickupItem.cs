@@ -14,6 +14,7 @@ public class PickupItem : MonoBehaviour
     public GameObject pickupUI;
     public GameObject equipment;
     public RuntimeAnimatorController newAnimations;
+    public GameObject hitbox;
     private bool equipped = false;
     //public string scriptName;
 
@@ -52,9 +53,12 @@ public class PickupItem : MonoBehaviour
 
     private void EquipItem()
     {
+        gameObject.GetComponent<SphereCollider>().enabled = false;
         equipped = true;
         pickupUI.SetActive(false);
         player.gameObject.GetComponent<Animator>().SetTrigger("Grab");
+        player.gameObject.GetComponent<Fighter>().ClearHitboxes();
+        player.gameObject.GetComponent<Fighter>().AddHitbox(hitbox);
         GameObject parent = GameObject.Find("WeaponHolder");
         transform.SetParent(parent.transform);
         transform.localPosition = Vector3.zero;

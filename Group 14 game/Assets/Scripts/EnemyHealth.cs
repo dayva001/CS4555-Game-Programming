@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 20;
     public int currentHealth;
+    private bool canTakeDamage = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,25 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if(canTakeDamage)
+        {
+            print("Hit " + this.name + " for " + damage + " damage.");
+            currentHealth -= damage;
+            canTakeDamage = false;
+            if (currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+            StartCoroutine(DamageCooldown(0.1f));
+        }
+    }
+
+    private IEnumerator DamageCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canTakeDamage = true;
     }
 
     // Enemies take damage depending on what player weapon hits them.
