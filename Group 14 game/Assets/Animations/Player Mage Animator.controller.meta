@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Group 14 game/Assets/Animations/Player Mage Animator.controller.meta
 guid: 4b3167fe78e8cf84393e967d567b7f5d
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: 3a52f1ec352cf3041a314c0a6d7b6b2a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>>> Stashed changes:Group 14 game/Assets/Animations/Door Opening Animation.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
