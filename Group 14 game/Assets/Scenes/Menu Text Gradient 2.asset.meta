@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Group 14 game/Assets/Scenes/Menu Text Gradient 2.asset.meta
 guid: ea79243f9f8055248822a0506261de76
 NativeFormatImporter:
+========
+guid: 43caa2909e732dc468e1cfba3d891f95
+PrefabImporter:
+>>>>>>>> 44a59dc036a8d75e6a48cc416f1695fd739596be:Group 14 game/Assets/Fav Prefabs/JERRY.prefab.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
