@@ -11,7 +11,7 @@ TagManager:
   - Pickup
   - EnemyMageProjectile
   - EnemyArcherProjectile
-  - DoorButton
+  - PlayerMeleeWeapon
   layers:
   - Default
   - TransparentFX
@@ -23,7 +23,7 @@ TagManager:
   - Interactable
   - Player
   - Unwalkable
-  - 
+  - Enemy
   - 
   - 
   - 
