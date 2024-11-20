@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Melee Pickup
   - Pickup
+  - EnemyMageProjectile
+  - EnemyArcherProjectile
+  - DoorButton
   layers:
   - Default
   - TransparentFX
