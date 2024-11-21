@@ -18,11 +18,8 @@ public class GameOver : MonoBehaviour
 
     private void Update()
     {
-        /*if (player1.GetComponent<PlayerHealth>().CheckIfDown() && player2.GetComponent<PlayerHealth>().CheckIfDown() && player3.GetComponent<PlayerHealth>().CheckIfDown() && !isGameOver)
-        {
-            ShowGameOver();
-        }*/
-        if (player1.GetComponent<PlayerHealth>().CheckIfDown() && !isGameOver)
+        // If all players are down and game hasn't ended, end the game with a fade in screen.
+        if (player1.GetComponent<PlayerHealth>().CheckIfDown() && player2.GetComponent<PlayerHealth>().CheckIfDown() && player3.GetComponent<PlayerHealth>().CheckIfDown() && !isGameOver)
         {
             isGameOver = true;
             StartCoroutine(GameOverFadeIn());
