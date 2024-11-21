@@ -3987,7 +3987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthBar: {fileID: 0}
   healthPotionSquare: {fileID: 0}
   canHeal: 1
@@ -4132,6 +4132,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ae2a2dfb-30fd-4ff2-ab49-61aec5a737de
     m_ActionName: Player2Controls/Dash[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b31610c3-4204-4430-9519-167786144d49
+    m_ActionName: Player3Controls/Movement[/DualShock4GamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2b8f0f57-09fd-49d1-bfe9-b060ce06310b
+    m_ActionName: Player3Controls/Interact[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e550aa68-7c42-480c-bea7-b7f6bb6691ae
+    m_ActionName: Player3Controls/Attack[/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 46d7b1f5-112f-439a-aa76-21705a6a0d3e
+    m_ActionName: Player3Controls/Jump[/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 015fd740-6b51-441f-a719-3520d335cfe4
+    m_ActionName: Player3Controls/Dash[/DualShock4GamepadHID/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1Controls

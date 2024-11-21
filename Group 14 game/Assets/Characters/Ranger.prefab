@@ -21656,7 +21656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2661881707491225599}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8320234, y: 0, z: -4.659387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21817,8 +21817,28 @@ MonoBehaviour:
     m_ActionId: c0af096f-5204-4163-bb54-575e9a039dac
     m_ActionName: Player1Controls/Dash[/Keyboard/shift]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bda56c07-2b89-4abe-a210-89b1448eaa27
+    m_ActionName: Player2Controls/Movement[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 74954e78-5286-44f6-a61b-546c3849afd0
+    m_ActionName: Player2Controls/Interact[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3258a286-57fa-43d4-a807-c7db73049cf1
+    m_ActionName: Player2Controls/Attack[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 724cf53d-5185-478e-91e7-d43340bf2ff0
+    m_ActionName: Player2Controls/Jump[/Keyboard/backslash]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae2a2dfb-30fd-4ff2-ab49-61aec5a737de
+    m_ActionName: Player2Controls/Dash[/Keyboard/rightShift]
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5738192630670691354}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
         m_MethodName: OnMovement
         m_Mode: 0
@@ -21830,16 +21850,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: bda56c07-2b89-4abe-a210-89b1448eaa27
-    m_ActionName: Player2Controls/Movement[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
+    m_ActionId: b31610c3-4204-4430-9519-167786144d49
+    m_ActionName: Player3Controls/Movement[/DualShock4GamepadHID/leftStick]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 74954e78-5286-44f6-a61b-546c3849afd0
-    m_ActionName: Player2Controls/Interact[/Keyboard/p]
+    m_ActionId: 2b8f0f57-09fd-49d1-bfe9-b060ce06310b
+    m_ActionName: Player3Controls/Interact[/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MageAttacks, Assembly-CSharp
+      - m_Target: {fileID: 3216699017163732338}
+        m_TargetAssemblyTypeName: RangerAttacks, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
@@ -21850,11 +21870,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3258a286-57fa-43d4-a807-c7db73049cf1
-    m_ActionName: Player2Controls/Attack[/Keyboard/enter]
+    m_ActionId: e550aa68-7c42-480c-bea7-b7f6bb6691ae
+    m_ActionName: Player3Controls/Attack[/DualShock4GamepadHID/buttonNorth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5738192630670691354}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -21866,11 +21886,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 724cf53d-5185-478e-91e7-d43340bf2ff0
-    m_ActionName: Player2Controls/Jump[/Keyboard/backslash]
+    m_ActionId: 46d7b1f5-112f-439a-aa76-21705a6a0d3e
+    m_ActionName: Player3Controls/Jump[/DualShock4GamepadHID/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5738192630670691354}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
         m_MethodName: OnDash
         m_Mode: 0
@@ -21882,11 +21902,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: ae2a2dfb-30fd-4ff2-ab49-61aec5a737de
-    m_ActionName: Player2Controls/Dash[/Keyboard/rightShift]
+    m_ActionId: 015fd740-6b51-441f-a719-3520d335cfe4
+    m_ActionName: Player3Controls/Dash[/DualShock4GamepadHID/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player2Controls
+  m_DefaultActionMap: Player3Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6136589807559723432
@@ -47429,7 +47449,7 @@ Transform:
   m_GameObject: {fileID: 5874993787908790832}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.163, y: 0.39, z: 0}
+  m_LocalPosition: {x: -0.286, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
