@@ -21,7 +21,7 @@ public class SkeletonMelee : MonoBehaviour
     private Rigidbody rigidBody;
     public bool canPatrol = true;
     public bool canChase = true;
-    public GameObject weapon;
+    public GameObject firepoint;
     public int damage = 5;
 
     //States
@@ -30,7 +30,6 @@ public class SkeletonMelee : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        weapon.GetComponent<Collider>().enabled = false;
     }
     void Awake()
     {
@@ -137,9 +136,11 @@ public class SkeletonMelee : MonoBehaviour
     }
     private void RaycastAttack()
     {
+        print("attacking");
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
+        if (Physics.Raycast(firepoint.transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
         {
+            Debug.DrawRay(transform.position, transform.forward, Color.green);
             if (hit.transform.tag == "Player")
             {
                 hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
