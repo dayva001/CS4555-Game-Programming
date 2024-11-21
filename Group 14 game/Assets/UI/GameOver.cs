@@ -30,13 +30,6 @@ public class GameOver : MonoBehaviour
             DisplayButtons();
         }
     }
-    private void ShowGameOver()
-    {
-        Color color = gameOverPanel.color;
-        color.a = 1.0f;
-
-        gameOverPanel.color = color;
-    }
 
     private IEnumerator GameOverFadeIn()
     {

@@ -13,6 +13,8 @@ TagManager:
   - EnemyArcherProjectile
   - PlayerMeleeWeapon
   - Downed
+  - DoorButton
+  - Tome
   layers:
   - Default
   - TransparentFX
