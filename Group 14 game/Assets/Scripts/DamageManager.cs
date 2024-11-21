@@ -12,6 +12,7 @@ public class DamageManager : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && isPlayerDamage)
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+            
         }
         else if (collision.gameObject.tag == "Player" && !isPlayerDamage)
         {

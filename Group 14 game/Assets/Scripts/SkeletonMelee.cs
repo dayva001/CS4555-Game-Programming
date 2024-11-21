@@ -21,6 +21,8 @@ public class SkeletonMelee : MonoBehaviour
     private Rigidbody rigidBody;
     public bool canPatrol = true;
     public bool canChase = true;
+    public GameObject weapon;
+    public int damage = 5;
 
     //States
     public float sightRange, attackRange;
@@ -28,6 +30,7 @@ public class SkeletonMelee : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        weapon.GetComponent<Collider>().enabled = false;
     }
     void Awake()
     {
@@ -78,7 +81,6 @@ public class SkeletonMelee : MonoBehaviour
             if (!walkPointSet) SearchWalkPoint();
             if (walkPointSet)
                 agent.SetDestination(walkPoint);
-
             Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
             //walkpoint reached
@@ -92,7 +94,6 @@ public class SkeletonMelee : MonoBehaviour
         //calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
-
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
@@ -125,6 +126,8 @@ public class SkeletonMelee : MonoBehaviour
     private Transform NearestPlayer()
     {
         Transform nearestPlayer = player[0];
+        if(player.Count == 1)
+            return nearestPlayer;
         for (int i = 0; i < player.Count; i++)
         {
             if (player[0].tag != "Downed" && Vector3.Distance(transform.position, player[i].position) < Vector3.Distance(transform.position, nearestPlayer.position))
@@ -132,9 +135,21 @@ public class SkeletonMelee : MonoBehaviour
         }
         return nearestPlayer;
     }
+    private void RaycastAttack()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
+            }
+        }
+    }
     private void ResetAttack()
     {
         alreadyAttacked = false;
         agent.isStopped = false;
+        RaycastAttack();
     }
 }

@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isRaged = false;
     // Any keyboard input should be blocked if player is down. Movement is fractioned.
     public bool isDown = false;
+    public bool canTakeDamage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(!canTakeDamage)
+        {
+            return;
+        }
         if (isRaged)
         {
             damage = damage / 2;
@@ -54,6 +59,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+        StartCoroutine(StopDamage(0.3f));
+    }
+    private IEnumerator StopDamage(float time)
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(time);
+        canTakeDamage = true;
     }
     void Heal()
     {
