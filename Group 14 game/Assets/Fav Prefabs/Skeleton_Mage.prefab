@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 6536862281630289933}
   - component: {fileID: 1112414100474194426}
   - component: {fileID: 7168441582558426809}
+  - component: {fileID: 1497081891190617472}
   m_Layer: 10
   m_Name: Skeleton_Mage
   m_TagString: Enemy
@@ -347,9 +348,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601712158706155745}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9995144, z: -0, w: 0.031160258}
+  m_LocalRotation: {x: 0, y: -0.99951446, z: 0, w: 0.031157872}
   m_LocalPosition: {x: 2.43, y: -0.00000047683716, z: 1.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2937450580099120482}
@@ -511,6 +512,20 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: -0.013581812, y: 0.8985128, z: 4.3890672e-11}
+--- !u!114 &1497081891190617472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601712158706155745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50104acf2ef9e4890dfda42fe59083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 20
 --- !u!1 &1733680531985314992
 GameObject:
   m_ObjectHideFlags: 0

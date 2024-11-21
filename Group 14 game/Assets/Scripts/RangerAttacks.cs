@@ -36,6 +36,7 @@ public class RangerAttacks : MonoBehaviour
             if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Run")))
             {
                 anim.SetTrigger("Shoot");
+                gameObject.GetComponent<Player1Controller>().canMove = false;
                 StartCoroutine(FireArrow(getAnimationLength(5)));
             }
         }
@@ -50,5 +51,6 @@ public class RangerAttacks : MonoBehaviour
         }
         arrow = Instantiate(projectile, castPoint.transform.position, gameObject.transform.rotation);
         crRunning = false;
+        gameObject.GetComponent<Player1Controller>().canMove = true;
     }
 }

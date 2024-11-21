@@ -32,6 +32,7 @@ public class MageAttacks : MonoBehaviour
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
         {
             anim.SetBool("Hit 1",true);
+            gameObject.GetComponent<Player1Controller>().canMove = false;
             StartCoroutine(ShootMagic(1.1f));
             StartCoroutine(ResetHit(getAnimationLength(5),"Hit 1"));
             
@@ -47,5 +48,6 @@ public class MageAttacks : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         anim.SetBool(hit, false);
+        gameObject.GetComponent<Player1Controller>().canMove = true;
     }
 }

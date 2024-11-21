@@ -43,10 +43,6 @@ public class PlayerHealth : MonoBehaviour
             isDown = true;
             gameObject.tag = "Downed";
         }
-        if (Input.GetKeyDown(KeyCode.L)) // Temporary for testing.
-        {
-            Revived();
-        }
     }
 
     public void TakeDamage(int damage)
