@@ -328,7 +328,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ee7ca249-52d9-4ffa-aef4-38589d1adbb3"",
-                    ""path"": ""<Keyboard>/#(\\)"",
+                    ""path"": ""<Keyboard>/backslash"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
