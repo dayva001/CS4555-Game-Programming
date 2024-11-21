@@ -12,7 +12,8 @@ public class Hitbox : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
-        if (other.gameObject.tag == "Enemy")
+
+        else if (other.gameObject.tag == "Enemy" && playerDamage)
         {
             other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
         }

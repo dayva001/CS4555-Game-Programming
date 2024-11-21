@@ -139,7 +139,6 @@ public class SkeletonMelee : MonoBehaviour
     }
     private void RaycastAttack()
     {
-        print("attacking");
         RaycastHit hit;
         if (Physics.Raycast(firepoint.transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
         {

@@ -15,6 +15,7 @@ public class Player1Controller: MonoBehaviour
     private bool isRolling = false;
     private bool upForce = false;
     public bool canMove = true;
+    private bool pickupInRange = false;
     public float jumpforce = 20f;
     public float rollForce = 10f;
     private Vector3 movementDirection;
@@ -29,7 +30,8 @@ public class Player1Controller: MonoBehaviour
     private float dragSave;
     private float jumpTime=Mathf.Infinity;
     private int rollCount =0;
-
+    private InputAction.CallbackContext interact;
+    private GameObject pickupItem = null;
     public GameObject stepRayUpper;
     public GameObject stepRayLower;
     public float stepHeight = 0.3f;
@@ -64,6 +66,7 @@ public class Player1Controller: MonoBehaviour
         counterMovement = new Vector3(-rigidBody.velocity.x * counterMovementForce, 0, -rigidBody.velocity.z * counterMovementForce);
         //jumping
         StepClimb();
+        CheckForPickup();
         //adds extra gravity to player when jumping
         if(jumpTime + 0.2f < Time.time)
         {
@@ -82,6 +85,11 @@ public class Player1Controller: MonoBehaviour
         {
             upForce = true;
         }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        interact = context;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -216,8 +224,28 @@ public class Player1Controller: MonoBehaviour
             rollCount--;   
         } 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
+        {
+            pickupInRange = true;
+            pickupItem = other.gameObject;
 
-    private void StepClimb()
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        pickupInRange = false;
+        pickupItem = null;
+    }
+    private void CheckForPickup()
+    {
+        if (pickupInRange && interact.performed)
+        {
+            pickupItem.GetComponentInChildren<PickupItem>().EquipItem();
+        }
+    }
+        private void StepClimb()
     {
         RaycastHit hitLower;
         if (Physics.Raycast(stepRayLower.transform.position, transform.TransformDirection(Vector3.forward), out hitLower, 0.25f))

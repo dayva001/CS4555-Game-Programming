@@ -51,7 +51,7 @@ public class PickupItem : MonoBehaviour
         Rotate();
     }
 
-    private void EquipItem()
+    public void EquipItem()
     {
         gameObject.GetComponent<SphereCollider>().enabled = false;
         equipped = true;
@@ -98,14 +98,6 @@ public class PickupItem : MonoBehaviour
             //set the object's Y to the new calculated Y
             transform.position = new Vector3(pos.x, newY, pos.z);
         }
-    }
-    void OnEnable()
-    {
-        actions.Player1Controls.Enable();
-    }
-    void OnDisable()
-    {
-        actions.Player1Controls.Disable();
     }
 }
 
