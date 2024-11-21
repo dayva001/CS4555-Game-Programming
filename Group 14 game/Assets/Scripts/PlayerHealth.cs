@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDown = true;
+            gameObject.tag = "Downed";
         }
         if (Input.GetKeyDown(KeyCode.L)) // Temporary for testing.
         {

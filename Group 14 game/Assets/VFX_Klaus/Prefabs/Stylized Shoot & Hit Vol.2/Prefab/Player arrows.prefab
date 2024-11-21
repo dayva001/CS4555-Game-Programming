@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 139706808539582968}
   - component: {fileID: 9200534574165644482}
   m_Layer: 0
-  m_Name: FX_Shoot_Arrow Scaled
+  m_Name: Player arrows
   m_TagString: EnemyArcherProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1485196952128162089}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70092213, z: -0, w: 0.7132379}
-  m_LocalPosition: {x: 14.16, y: 1.64, z: 10.87}
+  m_LocalPosition: {x: 14.15, y: 1.64, z: 10.79}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  fireRate: 1
+  fireRate: 0
   muzzlePrefab: {fileID: 719657563245746768, guid: 94c14b95f7645584d9909faa89ddcd3e, type: 3}
   hitPrefab: {fileID: 7044691720042714530, guid: 7fc25755a4006d54dbf3e9a0cd2b6d9b, type: 3}
 --- !u!65 &2234307259442726031
@@ -62,17 +62,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.3, z: 3.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 6.536516e-10}
 --- !u!54 &139706808539582968
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d498a049b7a12ee439ffcabd92cded2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
-  isPlayerDamage: 0
+  damageAmount: 20
+  isPlayerDamage: 1
 --- !u!1001 &9010048375942983085
 PrefabInstance:
   m_ObjectHideFlags: 0

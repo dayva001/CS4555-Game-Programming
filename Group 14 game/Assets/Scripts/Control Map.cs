@@ -75,17 +75,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""344ce66c-3d2d-4dde-90e5-8bc5bb759a94"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""WASD"",
                     ""id"": ""35ff0709-5dc1-4b9b-8dda-124e53090cb8"",
                     ""path"": ""2DVector"",
@@ -153,30 +142,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""33568a6b-1f74-4b70-b4e0-106f1e8f9152"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""09aba779-6f66-4c6c-bfd6-9a033e677cfd"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""aff377e5-9454-41d7-83dc-0aeff874a24e"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -197,30 +164,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""48cd9e9e-bceb-4bca-82ba-b2bcdcd43696"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""52851677-dc46-45aa-819f-b6d7fa87395c"",
                     ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""97154344-fb13-4155-943a-639b221b859a"",
-                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -281,17 +226,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""b83f4844-a247-4e81-bc34-708f39ac8e89"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""WASD"",
                     ""id"": ""df0fe952-371f-42c0-82e9-18700e351a17"",
@@ -360,30 +294,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ae663af9-22de-4e13-80ff-f54da2c6fcfb"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""63bff1ce-5d3d-429d-9fad-13b401794b39"",
                     ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""865dd368-5295-4310-a128-92c97fc3b90e"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -404,7 +316,104 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9ee0d2e1-544c-4bb9-84a2-c586c4f34051"",
+                    ""id"": ""697243c8-8e77-426e-a453-6e405b6cb9da"",
+                    ""path"": ""<Keyboard>/slash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player3Controls"",
+            ""id"": ""3dc914c8-d314-40ce-bbb3-d2550649f309"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""b31610c3-4204-4430-9519-167786144d49"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b8f0f57-09fd-49d1-bfe9-b060ce06310b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""e550aa68-7c42-480c-bea7-b7f6bb6691ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""46d7b1f5-112f-439a-aa76-21705a6a0d3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""015fd740-6b51-441f-a719-3520d335cfe4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""22625b49-6f9a-49ae-b994-9a603e3df815"",
+                    ""path"": ""<DualShockGamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3913cd13-a418-4159-b739-8400eaa7884c"",
+                    ""path"": ""<DualShockGamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61c9e886-bf78-46d7-b7c5-8197a9007107"",
+                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce4e93df-3e74-4bc8-939e-ee2304a5c2f3"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -415,19 +424,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""697243c8-8e77-426e-a453-6e405b6cb9da"",
-                    ""path"": ""<Keyboard>/rightShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""59be0e2d-6a96-493f-b5ac-a0b073cfa019"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""f11b0dd9-5d4c-4cbb-b9aa-461c80ce5fe3"",
+                    ""path"": ""<DualShockGamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -454,6 +452,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player2Controls_Attack = m_Player2Controls.FindAction("Attack", throwIfNotFound: true);
         m_Player2Controls_Jump = m_Player2Controls.FindAction("Jump", throwIfNotFound: true);
         m_Player2Controls_Dash = m_Player2Controls.FindAction("Dash", throwIfNotFound: true);
+        // Player3Controls
+        m_Player3Controls = asset.FindActionMap("Player3Controls", throwIfNotFound: true);
+        m_Player3Controls_Movement = m_Player3Controls.FindAction("Movement", throwIfNotFound: true);
+        m_Player3Controls_Interact = m_Player3Controls.FindAction("Interact", throwIfNotFound: true);
+        m_Player3Controls_Attack = m_Player3Controls.FindAction("Attack", throwIfNotFound: true);
+        m_Player3Controls_Jump = m_Player3Controls.FindAction("Jump", throwIfNotFound: true);
+        m_Player3Controls_Dash = m_Player3Controls.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -667,6 +672,84 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public Player2ControlsActions @Player2Controls => new Player2ControlsActions(this);
+
+    // Player3Controls
+    private readonly InputActionMap m_Player3Controls;
+    private List<IPlayer3ControlsActions> m_Player3ControlsActionsCallbackInterfaces = new List<IPlayer3ControlsActions>();
+    private readonly InputAction m_Player3Controls_Movement;
+    private readonly InputAction m_Player3Controls_Interact;
+    private readonly InputAction m_Player3Controls_Attack;
+    private readonly InputAction m_Player3Controls_Jump;
+    private readonly InputAction m_Player3Controls_Dash;
+    public struct Player3ControlsActions
+    {
+        private @Controls m_Wrapper;
+        public Player3ControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player3Controls_Movement;
+        public InputAction @Interact => m_Wrapper.m_Player3Controls_Interact;
+        public InputAction @Attack => m_Wrapper.m_Player3Controls_Attack;
+        public InputAction @Jump => m_Wrapper.m_Player3Controls_Jump;
+        public InputAction @Dash => m_Wrapper.m_Player3Controls_Dash;
+        public InputActionMap Get() { return m_Wrapper.m_Player3Controls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player3ControlsActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayer3ControlsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_Player3ControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_Player3ControlsActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+        }
+
+        private void UnregisterCallbacks(IPlayer3ControlsActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+        }
+
+        public void RemoveCallbacks(IPlayer3ControlsActions instance)
+        {
+            if (m_Wrapper.m_Player3ControlsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayer3ControlsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_Player3ControlsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_Player3ControlsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public Player3ControlsActions @Player3Controls => new Player3ControlsActions(this);
     public interface IPlayer1ControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -676,6 +759,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
     }
     public interface IPlayer2ControlsActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+    }
+    public interface IPlayer3ControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);

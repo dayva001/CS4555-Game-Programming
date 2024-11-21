@@ -48,6 +48,18 @@ public class SkeletonArcher : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange && canChase) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
         SetAnimations();
+        UpdateDownedPlayers();
+    }
+
+    void UpdateDownedPlayers()
+    {
+        for (int i = 0; i < player.Count; i++)
+        {
+            if (player[i].tag == "Downed")
+            {
+                player.Remove(player[i]);
+            }
+        }
     }
 
     private void SetAnimations()
@@ -125,8 +137,8 @@ public class SkeletonArcher : MonoBehaviour
         Transform nearestPlayer = player[0];
         for (int i = 0; i < player.Count; i++)
         {
-            if (Vector3.Distance(transform.position, player[i].position) < Vector3.Distance(transform.position, nearestPlayer.position))
-                nearestPlayer=player[i];
+            if (player[0].tag != "Downed" && Vector3.Distance(transform.position, player[i].position) < Vector3.Distance(transform.position, nearestPlayer.position))
+                nearestPlayer = player[i];
         }
         return nearestPlayer;
     }
