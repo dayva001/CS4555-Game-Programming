@@ -20239,7 +20239,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.7116418, y: 0.212, z: -3.3034804}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4789703138835194683}
@@ -20260,7 +20260,7 @@ Animator:
   m_GameObject: {fileID: 2675498264312852641}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 038320a534bd8b444b43734860d1a211, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4b3167fe78e8cf84393e967d567b7f5d, type: 2}
+  m_Controller: {fileID: 9100000, guid: e5455504805179946b3c52f70f755fc9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20310,17 +20310,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e768c5011dc9c49b4f53a61264268f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 60
-  counterMovementForce: 10
+  movementForce: 200
+  counterMovementForce: 20
   groundCheck: {fileID: 5071624696275501251}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  downForce: 20
+  downForce: 40
   canAirstrafe: 1
-  jumpforce: 13
-  rollForce: 20
-  extraGravity: 15
+  canMove: 1
+  jumpforce: 26
+  rollForce: 40
+  extraGravity: 30
   rigidBody: {fileID: 3108560959723614682}
   turnSmoothTime: 0.1
   stepRayUpper: {fileID: 8743064926528823803}
@@ -20386,7 +20387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 27e780a3765938f4589391b5b17143e2, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 1d4d3a0f94553594690164330963a0c8, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
