@@ -1213,7 +1213,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   firepoint: {fileID: 4590225874346916625}
   damage: 5
   sightRange: 10
-  attackRange: 1.2
+  attackRange: 3
 --- !u!136 &5516133600861512150
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -642,26 +642,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1128147350}
-    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 523289662}
-    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnInteract
-      objectReference: {fileID: 0}
-    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Player1Controller, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2217392053353467992, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.18
@@ -776,17 +756,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6623be51d97dd849becb96d69edb4bc, type: 3}
---- !u!114 &523289662 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3768000016134569148, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
-  m_PrefabInstance: {fileID: 457352610}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e768c5011dc9c49b4f53a61264268f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &540677972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3685619926622055708, guid: 6c30d2a44740019429d8b367eac26424, type: 3}

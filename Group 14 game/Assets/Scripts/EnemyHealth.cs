@@ -28,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
             canTakeDamage = false;
             if (currentHealth <= 0)
             {
-                print(currentHealth);
                 Die();
             }
             StartCoroutine(DamageCooldown(0.1f));
@@ -36,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Die()
     {
-        print("Dying");
         animator.SetBool("isDead", true);
         animator.Play("Death");
         StartCoroutine(DestroyEnemy(getAnimationLength("Death")+0.3f));
