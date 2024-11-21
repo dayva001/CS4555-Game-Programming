@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,6 +40,8 @@ public class Fighter : MonoBehaviour
         {
             SetHitboxes(true);
             anim.SetBool("Hit 1",true);
+            gameObject.GetComponent<Player1Controller>().canMove = false;
+            gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 3, ForceMode.Impulse);
             StartCoroutine(ResetHit(getAnimationLength(5),"Hit 1"));
             
         }
@@ -46,12 +49,16 @@ public class Fighter : MonoBehaviour
         {
             SetHitboxes(true);
             anim.SetBool("Hit 2",true);
+            gameObject.GetComponent<Player1Controller>().canMove = false;
+            gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 3, ForceMode.Impulse);
             StartCoroutine(ResetHit(getAnimationLength(6),"Hit 2"));
         }
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Hit 2"))
         {
             SetHitboxes(true);
             anim.SetBool("Hit 3", true);
+            gameObject.GetComponent<Player1Controller>().canMove = false;
+            gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 3, ForceMode.Impulse);
             StartCoroutine(ResetHit(getAnimationLength(7),"Hit 3"));
         }
     }
@@ -61,6 +68,7 @@ public class Fighter : MonoBehaviour
         yield return new WaitForSeconds(time);
         anim.SetBool(hit, false);
         SetHitboxes(false);
+        gameObject.GetComponent<Player1Controller>().canMove = true;
     }
 
     public void AddHitbox(GameObject hitbox)
