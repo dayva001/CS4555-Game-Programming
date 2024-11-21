@@ -37,12 +37,24 @@ public class EnemyHealth : MonoBehaviour
     {
         animator.SetBool("isDead", true);
         animator.Play("Death");
-        StartCoroutine(DestroyEnemy(2.6f));
+        StartCoroutine(DestroyEnemy(getAnimationLength("Death")+0.3f));
     }
     private IEnumerator DestroyEnemy(float time)
     {
         yield return new WaitForSeconds(time);
         Destroy(this.gameObject);
+    }
+
+    private float getAnimationLength(string name)
+    {
+        for(int i = 0; i < animator.runtimeAnimatorController.animationClips.Length; i++)
+        {
+            if (animator.runtimeAnimatorController.animationClips[i].name == name)
+            {
+                return animator.runtimeAnimatorController.animationClips[i].length;
+            }
+        }
+        return 0;
     }
 
     private IEnumerator DamageCooldown(float time)

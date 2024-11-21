@@ -39,14 +39,17 @@ public class JerryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        if (!playerInSightRange && !playerInAttackRange && canPatrol) Patroling();
-        if (playerInSightRange && !playerInAttackRange && canChase) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
-        SetAnimations();
-        UpdateDownedPlayers();
+        if (!animator.GetBool("isDead"))
+        {
+            //check for sight and attack range
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+            if (!playerInSightRange && !playerInAttackRange && canPatrol) Patroling();
+            if (playerInSightRange && !playerInAttackRange && canChase) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
+            SetAnimations();
+            UpdateDownedPlayers();
+        }
     }
 
     void UpdateDownedPlayers()

@@ -358,6 +358,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c30b5020a46b9d4cbceb33fc832f9c4, type: 3}
+--- !u!1 &335506194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7320916457419889511, guid: e620ffb346db75841952976d5b29db86, type: 3}
+  m_PrefabInstance: {fileID: 366967675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &335506195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335506194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50104acf2ef9e4890dfda42fe59083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 40
+--- !u!1001 &366967675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7320916457419889511, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_Name
+      value: Jerry Final V
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14765579
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4236846
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7320916457419889511, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 335506195}
+  m_SourcePrefab: {fileID: 100100000, guid: e620ffb346db75841952976d5b29db86, type: 3}
 --- !u!1001 &431707895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,3 +1971,4 @@ SceneRoots:
   - {fileID: 1781410607}
   - {fileID: 1291810964}
   - {fileID: 7498780373892984543}
+  - {fileID: 366967675}
