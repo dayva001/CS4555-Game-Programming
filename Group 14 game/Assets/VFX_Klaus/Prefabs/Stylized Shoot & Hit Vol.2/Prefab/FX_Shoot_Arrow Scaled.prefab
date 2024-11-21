@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  fireRate: 7
+  fireRate: 1
   muzzlePrefab: {fileID: 719657563245746768, guid: 94c14b95f7645584d9909faa89ddcd3e, type: 3}
   hitPrefab: {fileID: 7044691720042714530, guid: 7fc25755a4006d54dbf3e9a0cd2b6d9b, type: 3}
 --- !u!65 &2234307259442726031
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d498a049b7a12ee439ffcabd92cded2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 10
+  isPlayerDamage: 0
 --- !u!1001 &9010048375942983085
 PrefabInstance:
   m_ObjectHideFlags: 0

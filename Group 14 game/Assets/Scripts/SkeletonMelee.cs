@@ -46,6 +46,18 @@ public class SkeletonMelee : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange && canChase) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
         SetAnimations();
+        UpdateDownedPlayers();
+    }
+
+    void UpdateDownedPlayers()
+    {
+        for (int i = 0; i < player.Count; i++)
+        {
+            if (player[i].tag == "Downed")
+            {
+                player.Remove(player[i]);
+            }
+        }
     }
 
     private void SetAnimations()
@@ -54,12 +66,10 @@ public class SkeletonMelee : MonoBehaviour
         if (agent.remainingDistance < 0.1f || rigidBody.velocity == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);
-            print("Speed 0");
         }
         else
         {
             animator.SetFloat("Speed", 1);
-            print("Speed 1");
         }
     }
 
@@ -117,7 +127,7 @@ public class SkeletonMelee : MonoBehaviour
         Transform nearestPlayer = player[0];
         for (int i = 0; i < player.Count; i++)
         {
-            if (Vector3.Distance(transform.position, player[i].position) < Vector3.Distance(transform.position, nearestPlayer.position))
+            if (player[0].tag != "Downed" && Vector3.Distance(transform.position, player[i].position) < Vector3.Distance(transform.position, nearestPlayer.position))
                 nearestPlayer=player[i];
         }
         return nearestPlayer;

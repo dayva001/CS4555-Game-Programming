@@ -12,6 +12,7 @@ TagManager:
   - EnemyMageProjectile
   - EnemyArcherProjectile
   - PlayerMeleeWeapon
+  - Downed
   layers:
   - Default
   - TransparentFX
