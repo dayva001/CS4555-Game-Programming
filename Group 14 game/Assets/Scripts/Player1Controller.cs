@@ -14,6 +14,7 @@ public class Player1Controller: MonoBehaviour
     public bool canAirstrafe = true;
     private bool isRolling = false;
     private bool upForce = false;
+    public bool canMove = true;
     public float jumpforce = 20f;
     public float rollForce = 10f;
     private Vector3 movementDirection;
@@ -101,7 +102,10 @@ public class Player1Controller: MonoBehaviour
             return;
         }
         //moving
-        Move();
+        if (canMove)
+        {
+            Move();
+        }
         DownardForceCheck();
         //setting rotaiton
         SetRotation();
