@@ -7,10 +7,12 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
     private bool canTakeDamage = true;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,15 +24,25 @@ public class EnemyHealth : MonoBehaviour
     {
         if(canTakeDamage)
         {
-            print("Hit " + this.name + " for " + damage + " damage.");
             currentHealth -= damage;
             canTakeDamage = false;
             if (currentHealth <= 0)
             {
-                Destroy(this.gameObject);
+                Die();
             }
             StartCoroutine(DamageCooldown(0.1f));
         }
+    }
+    private void Die()
+    {
+        animator.SetBool("isDead", true);
+        animator.Play("Death");
+        StartCoroutine(DestroyEnemy(2.6f));
+    }
+    private IEnumerator DestroyEnemy(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(this.gameObject);
     }
 
     private IEnumerator DamageCooldown(float time)

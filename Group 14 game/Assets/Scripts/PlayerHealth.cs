@@ -19,12 +19,14 @@ public class PlayerHealth : MonoBehaviour
     // Any keyboard input should be blocked if player is down. Movement is fractioned.
     public bool isDown = false;
     public bool canTakeDamage = true;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
             damage = damage / 2;
         }
         currentHealth -= damage;
+        animator.SetTrigger("Take Damage");
 
         healthBar.SetHealth(currentHealth);
         StartCoroutine(StopDamage(0.3f));
