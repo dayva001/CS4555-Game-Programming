@@ -1119,7 +1119,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.36, y: 0, z: 0.33}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4797097438029123383}
@@ -1129,6 +1129,7 @@ Transform:
   - {fileID: 5715323784716788309}
   - {fileID: 8921668846022130271}
   - {fileID: 3901037623497419792}
+  - {fileID: 5213265726220247181}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1672921439346343526
@@ -1251,8 +1252,10 @@ MonoBehaviour:
   timeBetweenAttacks: 0
   canPatrol: 1
   canChase: 1
+  firepoint: {fileID: 4590225874346916625}
+  damage: 5
   sightRange: 10
-  attackRange: 0.8
+  attackRange: 1.2
 --- !u!136 &5516133600861512150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1290,6 +1293,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 20
+--- !u!1 &4590225874346916625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5213265726220247181}
+  m_Layer: 10
+  m_Name: firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5213265726220247181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590225874346916625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.014, y: 1.35, z: 0.159}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1716602149336768153}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5025664551095402012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,7 +2658,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64136517186920942, guid: 4b12cbf8230d02b4890f46dba29baeff, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

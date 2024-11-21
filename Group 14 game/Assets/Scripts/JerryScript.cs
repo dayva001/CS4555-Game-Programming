@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
-public class SkeletonMelee : MonoBehaviour
+public class JerryScript : MonoBehaviour
 {
     public NavMeshAgent agent;
     public List<Transform> player;
@@ -21,8 +21,6 @@ public class SkeletonMelee : MonoBehaviour
     private Rigidbody rigidBody;
     public bool canPatrol = true;
     public bool canChase = true;
-    public GameObject firepoint;
-    public int damage = 5;
 
     //States
     public float sightRange, attackRange;
@@ -134,23 +132,9 @@ public class SkeletonMelee : MonoBehaviour
         }
         return nearestPlayer;
     }
-    private void RaycastAttack()
-    {
-        print("attacking");
-        RaycastHit hit;
-        if (Physics.Raycast(firepoint.transform.position, transform.TransformDirection(Vector3.forward), out hit, attackRange))
-        {
-            Debug.DrawRay(transform.position, transform.forward, Color.green);
-            if (hit.transform.tag == "Player")
-            {
-                hit.transform.GetComponent<PlayerHealth>().TakeDamage(damage);
-            }
-        }
-    }
     private void ResetAttack()
     {
         alreadyAttacked = false;
         agent.isStopped = false;
-        RaycastAttack();
     }
 }
