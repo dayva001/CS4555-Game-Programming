@@ -10,17 +10,27 @@ public class RangerAttacks : MonoBehaviour
     public GameObject castPoint;
     GameObject arrow;
     bool crRunning = false;
+    // In Update() the script checks if the player is down from the PlayerHealth script.
+    public bool isDown;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
     }
+    private void Update()
+    {
+        // Checks if player is down from PlayerHealth script.
+        isDown = gameObject.GetComponent<PlayerHealth>().CheckIfDown();
+    }
 
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        OnClick();
+        if (!isDown)
+        {
+            OnClick();
+        }
 
     }
 

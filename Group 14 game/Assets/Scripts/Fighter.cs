@@ -8,6 +8,8 @@ public class Fighter : MonoBehaviour
 {
     private Animator anim;
     private List<GameObject> hitboxes = new List<GameObject>();
+    // In Update() the script checks if the player is down from the PlayerHealth script.
+    public bool isDown;
 
 
     // Start is called before the first frame update
@@ -22,11 +24,16 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Checks if player is down from PlayerHealth script.
+        isDown = gameObject.GetComponent<PlayerHealth>().CheckIfDown();
     }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+            if (!isDown)
+        {
             OnClick();
+        }
     }
 
     float getAnimationLength(int index)

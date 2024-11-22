@@ -8,6 +8,8 @@ public class MageAttacks : MonoBehaviour
     private Animator anim;
     public ParticleSystem hitParticles;
     public GameObject castPoint;
+    // In Update() the script checks if the player is down from the PlayerHealth script.
+    public bool isDown;
 
 
     // Start is called before the first frame update
@@ -15,11 +17,19 @@ public class MageAttacks : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+    private void Update()
+    {
+        // Checks if player is down from PlayerHealth script.
+        isDown = gameObject.GetComponent<PlayerHealth>().CheckIfDown();
+    }
 
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+            if (!isDown)
+        {
             OnClick();
+        }
     }
 
     float getAnimationLength(int index)

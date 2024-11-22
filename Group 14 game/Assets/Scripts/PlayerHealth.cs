@@ -47,10 +47,11 @@ public class PlayerHealth : MonoBehaviour
             isDown = true;
             gameObject.tag = "Downed";
             gameObject.GetComponent<BoxCollider>().enabled = true;
-            healthBar.SetHealth(0);
+            // healthBar.SetHealth(0); // debugging down-revive
         }
     }
 
+    // Instead of GetKeyDown, using the Player Input component -> Control Map , Events to use the binds tied to each character.
     public void OnHeal(InputAction.CallbackContext context)
     {
         if (!isDown)

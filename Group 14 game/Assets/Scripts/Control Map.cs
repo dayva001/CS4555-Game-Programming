@@ -160,17 +160,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""09aba779-6f66-4c6c-bfd6-9a033e677cfd"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1ec2a4d0-e3c7-49cf-a3e1-c3fb3616292c"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
