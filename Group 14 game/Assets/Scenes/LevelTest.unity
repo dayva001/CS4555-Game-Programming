@@ -430,6 +430,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   isPlayerDamage: 0
+--- !u!114 &678675357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678675340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34181ff17af15a545a108af34b3cd7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallMaterial: {fileID: 2100000, guid: 8e23683691f8e80439149d4f28c86ab3, type: 2}
+  mainCamera: {fileID: 1218202898}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &780790609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +498,10 @@ PrefabInstance:
     - target: {fileID: 4341212649948842884, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
       propertyPath: m_Name
       value: Skeleton Melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341212649948842884, guid: e66332a5f27ebf34282c7b6e1e4cb20d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -601,6 +622,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!20 &1218202898 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4509376060752175603, guid: 63d5fcc9d1fc7714ca6dcd392167384b, type: 3}
+  m_PrefabInstance: {fileID: 1671071001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1447463343
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +731,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2432889045855020017, guid: 63d5fcc9d1fc7714ca6dcd392167384b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.614
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 2432889045855020017, guid: 63d5fcc9d1fc7714ca6dcd392167384b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -713,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432889045855020017, guid: 63d5fcc9d1fc7714ca6dcd392167384b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.6047735
+      value: -5.044773
       objectReference: {fileID: 0}
     - target: {fileID: 2432889045855020017, guid: 63d5fcc9d1fc7714ca6dcd392167384b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -784,7 +810,7 @@ GameObject:
   - component: {fileID: 2040238903}
   - component: {fileID: 2040238902}
   - component: {fileID: 2040238901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +858,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6192e995d7d69a2458c8e1d0938fec99, type: 2}
+  - {fileID: 2100000, guid: 8e23683691f8e80439149d4f28c86ab3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1109,6 +1135,58 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.06771793
       objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 491f5151-0014-438b-a4c8-37c9277ea5e2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 5614a550-2b00-42e8-a6f6-59b036bc8a4a
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: fd046f02-201a-4b5f-b24c-a9c1ddb8e306
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: da73ab3f-7431-4845-97e0-077c5a5431f7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: d9b2e1e6-a914-4957-8703-82591070917e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: 1a368965-e933-46ec-8cc0-0087bfafdf9d
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player1Controls/Heal[/Keyboard/z]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player1Controls/Special[/Keyboard/b]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player2Controls/Heal[/Keyboard/h]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player2Controls/Special[/Keyboard/o]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: Player3Controls/Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947323123882095943, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: Player3Controls/Special
+      objectReference: {fileID: 0}
     - target: {fileID: 2002373959380516798, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.188966
@@ -1231,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2217392053353467992, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.614
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 2217392053353467992, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1239,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2217392053353467992, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.36
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2217392053353467992, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2064,6 +2142,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 738359242516874892, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 678675349}
+    - targetCorrespondingSourceObject: {fileID: 738359242516874892, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678675357}
   m_SourcePrefab: {fileID: 100100000, guid: db9333d608a57b64f8db2034cdcc91e9, type: 3}
 --- !u!1001 &4435187598871822636
 PrefabInstance:
@@ -2076,6 +2157,10 @@ PrefabInstance:
     - target: {fileID: 7320916457419889511, guid: e620ffb346db75841952976d5b29db86, type: 3}
       propertyPath: m_Name
       value: Jerry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320916457419889511, guid: e620ffb346db75841952976d5b29db86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7320916457419889513, guid: e620ffb346db75841952976d5b29db86, type: 3}
       propertyPath: m_LocalPosition.x
