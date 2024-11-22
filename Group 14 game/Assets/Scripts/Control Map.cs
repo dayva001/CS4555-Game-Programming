@@ -71,6 +71,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""491f5151-0014-438b-a4c8-37c9277ea5e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""5614a550-2b00-42e8-a6f6-59b036bc8a4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -183,6 +201,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1936322-227a-4f08-84e1-f7c730d38ed0"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4dea7a9-2f00-499a-83b9-4f448bb7b8f0"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -230,6 +270,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""ae2a2dfb-30fd-4ff2-ab49-61aec5a737de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd046f02-201a-4b5f-b24c-a9c1ddb8e306"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""da73ab3f-7431-4845-97e0-077c5a5431f7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -335,6 +393,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""86dccdb1-7540-4f3d-981c-1e56ab6c51e7"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2dfdd672-bc9e-41fd-b6e6-42b2da178cb1"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -382,6 +462,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""015fd740-6b51-441f-a719-3520d335cfe4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9b2e1e6-a914-4957-8703-82591070917e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a368965-e933-46ec-8cc0-0087bfafdf9d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -498,6 +596,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52e2e358-bbd5-4002-bf41-d3374a1477f9"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bea8ac48-b75d-434b-942a-7322d1e3d532"",
+                    ""path"": ""<DualShockGamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -511,6 +631,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player1Controls_Attack = m_Player1Controls.FindAction("Attack", throwIfNotFound: true);
         m_Player1Controls_Jump = m_Player1Controls.FindAction("Jump", throwIfNotFound: true);
         m_Player1Controls_Dash = m_Player1Controls.FindAction("Dash", throwIfNotFound: true);
+        m_Player1Controls_Heal = m_Player1Controls.FindAction("Heal", throwIfNotFound: true);
+        m_Player1Controls_Special = m_Player1Controls.FindAction("Special", throwIfNotFound: true);
         // Player2Controls
         m_Player2Controls = asset.FindActionMap("Player2Controls", throwIfNotFound: true);
         m_Player2Controls_Movement = m_Player2Controls.FindAction("Movement", throwIfNotFound: true);
@@ -518,6 +640,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player2Controls_Attack = m_Player2Controls.FindAction("Attack", throwIfNotFound: true);
         m_Player2Controls_Jump = m_Player2Controls.FindAction("Jump", throwIfNotFound: true);
         m_Player2Controls_Dash = m_Player2Controls.FindAction("Dash", throwIfNotFound: true);
+        m_Player2Controls_Heal = m_Player2Controls.FindAction("Heal", throwIfNotFound: true);
+        m_Player2Controls_Special = m_Player2Controls.FindAction("Special", throwIfNotFound: true);
         // Player3Controls
         m_Player3Controls = asset.FindActionMap("Player3Controls", throwIfNotFound: true);
         m_Player3Controls_Movement = m_Player3Controls.FindAction("Movement", throwIfNotFound: true);
@@ -525,6 +649,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player3Controls_Attack = m_Player3Controls.FindAction("Attack", throwIfNotFound: true);
         m_Player3Controls_Jump = m_Player3Controls.FindAction("Jump", throwIfNotFound: true);
         m_Player3Controls_Dash = m_Player3Controls.FindAction("Dash", throwIfNotFound: true);
+        m_Player3Controls_Heal = m_Player3Controls.FindAction("Heal", throwIfNotFound: true);
+        m_Player3Controls_Special = m_Player3Controls.FindAction("Special", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -591,6 +717,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1Controls_Attack;
     private readonly InputAction m_Player1Controls_Jump;
     private readonly InputAction m_Player1Controls_Dash;
+    private readonly InputAction m_Player1Controls_Heal;
+    private readonly InputAction m_Player1Controls_Special;
     public struct Player1ControlsActions
     {
         private @Controls m_Wrapper;
@@ -600,6 +728,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player1Controls_Attack;
         public InputAction @Jump => m_Wrapper.m_Player1Controls_Jump;
         public InputAction @Dash => m_Wrapper.m_Player1Controls_Dash;
+        public InputAction @Heal => m_Wrapper.m_Player1Controls_Heal;
+        public InputAction @Special => m_Wrapper.m_Player1Controls_Special;
         public InputActionMap Get() { return m_Wrapper.m_Player1Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -624,6 +754,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Heal.started += instance.OnHeal;
+            @Heal.performed += instance.OnHeal;
+            @Heal.canceled += instance.OnHeal;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
         }
 
         private void UnregisterCallbacks(IPlayer1ControlsActions instance)
@@ -643,6 +779,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Heal.started -= instance.OnHeal;
+            @Heal.performed -= instance.OnHeal;
+            @Heal.canceled -= instance.OnHeal;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
         }
 
         public void RemoveCallbacks(IPlayer1ControlsActions instance)
@@ -669,6 +811,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player2Controls_Attack;
     private readonly InputAction m_Player2Controls_Jump;
     private readonly InputAction m_Player2Controls_Dash;
+    private readonly InputAction m_Player2Controls_Heal;
+    private readonly InputAction m_Player2Controls_Special;
     public struct Player2ControlsActions
     {
         private @Controls m_Wrapper;
@@ -678,6 +822,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player2Controls_Attack;
         public InputAction @Jump => m_Wrapper.m_Player2Controls_Jump;
         public InputAction @Dash => m_Wrapper.m_Player2Controls_Dash;
+        public InputAction @Heal => m_Wrapper.m_Player2Controls_Heal;
+        public InputAction @Special => m_Wrapper.m_Player2Controls_Special;
         public InputActionMap Get() { return m_Wrapper.m_Player2Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -702,6 +848,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Heal.started += instance.OnHeal;
+            @Heal.performed += instance.OnHeal;
+            @Heal.canceled += instance.OnHeal;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
         }
 
         private void UnregisterCallbacks(IPlayer2ControlsActions instance)
@@ -721,6 +873,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Heal.started -= instance.OnHeal;
+            @Heal.performed -= instance.OnHeal;
+            @Heal.canceled -= instance.OnHeal;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
         }
 
         public void RemoveCallbacks(IPlayer2ControlsActions instance)
@@ -747,6 +905,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player3Controls_Attack;
     private readonly InputAction m_Player3Controls_Jump;
     private readonly InputAction m_Player3Controls_Dash;
+    private readonly InputAction m_Player3Controls_Heal;
+    private readonly InputAction m_Player3Controls_Special;
     public struct Player3ControlsActions
     {
         private @Controls m_Wrapper;
@@ -756,6 +916,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player3Controls_Attack;
         public InputAction @Jump => m_Wrapper.m_Player3Controls_Jump;
         public InputAction @Dash => m_Wrapper.m_Player3Controls_Dash;
+        public InputAction @Heal => m_Wrapper.m_Player3Controls_Heal;
+        public InputAction @Special => m_Wrapper.m_Player3Controls_Special;
         public InputActionMap Get() { return m_Wrapper.m_Player3Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -780,6 +942,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Heal.started += instance.OnHeal;
+            @Heal.performed += instance.OnHeal;
+            @Heal.canceled += instance.OnHeal;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
         }
 
         private void UnregisterCallbacks(IPlayer3ControlsActions instance)
@@ -799,6 +967,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Heal.started -= instance.OnHeal;
+            @Heal.performed -= instance.OnHeal;
+            @Heal.canceled -= instance.OnHeal;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
         }
 
         public void RemoveCallbacks(IPlayer3ControlsActions instance)
@@ -823,6 +997,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnHeal(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
     public interface IPlayer2ControlsActions
     {
@@ -831,6 +1007,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnHeal(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
     public interface IPlayer3ControlsActions
     {
@@ -839,5 +1017,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnHeal(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -32,19 +33,37 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && canHeal && !isDown)
+        /*if (Input.GetKeyDown(KeyCode.Z) && canHeal && !isDown)
         {
             Heal();
         }
         if (Input.GetKeyDown(KeyCode.B) && canRage && !isDown)
         {
             Rage();
-        }
+        }*/
 
         if (currentHealth <= 0)
         {
             isDown = true;
             gameObject.tag = "Downed";
+            gameObject.GetComponent<BoxCollider>().enabled = true;
+            healthBar.SetHealth(0);
+        }
+    }
+
+    public void OnHeal(InputAction.CallbackContext context)
+    {
+        if (!isDown)
+        {
+            Heal();
+        }
+    }
+
+    public void OnSpecial(InputAction.CallbackContext context)
+    {
+        if(!isDown)
+        {
+            Rage();
         }
     }
 
@@ -136,6 +155,15 @@ public class PlayerHealth : MonoBehaviour
         canRage = true;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && isDown)
+        {
+            // Stops the reviving player (collision object) from having the Revived() function ran on it.
+            gameObject.GetComponent<PlayerHealth>().Revived();
+        }
+    }
+
     public bool CheckIfDown()
     {
         return isDown;
@@ -144,6 +172,7 @@ public class PlayerHealth : MonoBehaviour
     public void Revived()
     {
         isDown = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         currentHealth = maxHealth / 2;
         healthBar.SetHealth(currentHealth);
         // Note: See Move() function in PlayerController script to understand down-revive cyrcle.
