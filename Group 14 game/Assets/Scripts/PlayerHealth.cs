@@ -6,6 +6,7 @@ using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
     public bool isRaged = false;
     // Any keyboard input should be blocked if player is down. Movement is fractioned.
     public bool isDown = false;
+    public TextMeshProUGUI playerIsInjuredText;
+    public UnityEngine.UI.Image currentWeaponFill;
     public bool canTakeDamage = true;
     private Animator animator;
 
@@ -42,12 +45,9 @@ public class PlayerHealth : MonoBehaviour
             Rage();
         }*/
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDown)
         {
-            isDown = true;
-            gameObject.tag = "Downed";
-            gameObject.GetComponent<BoxCollider>().enabled = true;
-            // healthBar.SetHealth(0); // debugging down-revive
+            PlayerGoesDown();
         }
     }
 
@@ -117,7 +117,10 @@ public class PlayerHealth : MonoBehaviour
 
         // Once the cooldown time is up, slider value should be max, item square should be green, and player should be able to heal.
         healthPotionSquare.slider.value = healthPotionSquare.slider.maxValue;
-        healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(1f);
+        if (!isDown) // If player is down, the square should remain red.
+        {
+            healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(1f);
+        }
         canHeal = true;
     }
 
@@ -152,8 +155,23 @@ public class PlayerHealth : MonoBehaviour
 
         // Once the cooldown time is up, slider value should be max, item square should be green, and player should be able to rage.
         rageScrollSquare.slider.value = rageScrollSquare.slider.maxValue;
-        rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(1f);
+        if (!isDown) // If player is down, the square should remain red.
+        {
+            rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(1f);
+        }  
         canRage = true;
+    }
+
+    private void PlayerGoesDown()
+    {
+        isDown = true;
+        gameObject.tag = "Downed";
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        playerIsInjuredText.gameObject.SetActive(true);
+        currentWeaponFill.color = healthPotionSquare.gradient.Evaluate(0f); // To show weapon cannot be used, weapon in hotbar will turn red. (Borrow gradient from hPS.)
+        healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(0f);
+        rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(0f);
+        // healthBar.SetHealth(0); // debugging down-revive
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -174,6 +192,17 @@ public class PlayerHealth : MonoBehaviour
     {
         isDown = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.tag = "Player";                                          // Can be targeted by enemies and revive other players.
+        playerIsInjuredText.gameObject.SetActive(false);
+        currentWeaponFill.color = healthPotionSquare.gradient.Evaluate(1f); // To show weapon can be used, weapon in hotbar will turn green. (Borrow gradient from hPS.)
+        if (canHeal)                                                        // If square refilled while down, it will remain red. So when revived, change to green.
+        {
+            healthPotionSquare.fill.color = healthPotionSquare.gradient.Evaluate(1f);
+        }
+        if (canRage)                                                        // If square refilled while down, it will remain red. So when revived, change to green.
+        {
+            rageScrollSquare.fill.color = rageScrollSquare.gradient.Evaluate(1f);
+        }
         currentHealth = maxHealth / 2;
         healthBar.SetHealth(currentHealth);
         // Note: See Move() function in PlayerController script to understand down-revive cyrcle.
