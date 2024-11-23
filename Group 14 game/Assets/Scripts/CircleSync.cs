@@ -6,25 +6,31 @@ public class CircleSync : MonoBehaviour
 {
     public static int PosID = Shader.PropertyToID("_Player_Position");
     public static int SizeID = Shader.PropertyToID("_Size");
-    public Material wallMaterial;
     public Camera mainCamera;
     public LayerMask layerMask;
+    public Shader shader;
+    private RaycastHit hit;
+    private Material wallMat;
+    public float holeSize = 20f;
     // Update is called once per frame
     void Update()
     {
         var dir = mainCamera.transform.position - transform.position;
         var ray = new Ray(transform.position, dir.normalized);
-
-        if (Physics.Raycast(ray,3000, layerMask))
+        var view = mainCamera.WorldToViewportPoint(transform.position);
+        if (Physics.Raycast(ray,out hit, 3000, layerMask))
         {
             print("Hit");
-            wallMaterial.SetFloat(SizeID, 1);
+            if(hit.collider.gameObject.GetComponent<Renderer>().material.shader.name == shader.name)
+            {
+                print(shader.name);
+                wallMat = hit.collider.gameObject.GetComponent<Renderer>().material;
+                wallMat.SetFloat(SizeID, holeSize/Vector3.Distance(transform.position, mainCamera.transform.position));
+            }
         }
-        else
+        else if(wallMat != null)
         {
-            wallMaterial.SetFloat(SizeID, 0);
+            wallMat.SetFloat(SizeID, 0);
         }
-        var view = mainCamera.WorldToViewportPoint(transform.position);
-        wallMaterial.SetVector(PosID, view);
     }
 }
