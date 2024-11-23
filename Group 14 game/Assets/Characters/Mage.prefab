@@ -20375,6 +20375,9 @@ MonoBehaviour:
   canRage: 1
   isRaged: 0
   isDown: 0
+  playerIsInjuredText: {fileID: 0}
+  currentWeaponFill: {fileID: 0}
+  canTakeDamage: 1
 --- !u!114 &2548135327378388629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20460,7 +20463,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3634807200248361128}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
-        m_MethodName: OnMovement
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20476,7 +20479,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3634807200248361128}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
-        m_MethodName: OnMovement
+        m_MethodName: OnDash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20508,6 +20511,30 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 015fd740-6b51-441f-a719-3520d335cfe4
     m_ActionName: Player3Controls/Dash[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 491f5151-0014-438b-a4c8-37c9277ea5e2
+    m_ActionName: Player1Controls/Heal[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5614a550-2b00-42e8-a6f6-59b036bc8a4a
+    m_ActionName: Player1Controls/Special[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd046f02-201a-4b5f-b24c-a9c1ddb8e306
+    m_ActionName: Player2Controls/Heal[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da73ab3f-7431-4845-97e0-077c5a5431f7
+    m_ActionName: Player2Controls/Special[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d9b2e1e6-a914-4957-8703-82591070917e
+    m_ActionName: Player3Controls/Heal[/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a368965-e933-46ec-8cc0-0087bfafdf9d
+    m_ActionName: Player3Controls/Special[/DualShock4GamepadHID/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player2Controls
@@ -20527,6 +20554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitParticles: {fileID: 917164692126034984, guid: 2ea512d33db735f42a05b8baf1b691f0, type: 3}
   castPoint: {fileID: 2144446768430493770}
+  isDown: 0
 --- !u!1 &2698114285328159136
 GameObject:
   m_ObjectHideFlags: 0
